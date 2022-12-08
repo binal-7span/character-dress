@@ -24,7 +24,7 @@ class DetachDressRequest extends FormRequest
     public function rules()
     {
         return [
-            'dress_id' => "required|array|exists:dresses,id",
+            'dress_ids' => "required|array|exists:dresses,id",
         ];
     }
 }
