@@ -15,6 +15,8 @@ jobs:
       - name: "Run laravel pint"
         run: ./vendor/bin/pint
       - name: "Push the changes to Git"
-        run: git add .
-          git commit -m"Pint changes"
-          git push
+        uses: binal-7span/character-dress
+        with:
+          commit_message: Apply Laravel Pint changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
