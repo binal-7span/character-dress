@@ -2,11 +2,17 @@ name: Laravel Pint
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   laravel-pint:
     runs-on: ubuntu-latest
     steps:
+      - name: "Composer Install"
+        run: composer install
       - name: "Run laravel pint"
         run: ./vendor/bin/pint
+      - name: "Commit Changes"
+        run: git add .
+          git commit -m "Pint changes"
+          git push
