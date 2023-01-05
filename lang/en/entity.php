@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "entityNotFound" => ":entity not found.",
+    'entityNotFound' => ':entity not found.',
 ];

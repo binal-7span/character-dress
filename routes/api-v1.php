@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +14,5 @@ use App\Http\Controllers\Api\V1;
 |
 */
 
-Route::post('characters/{character}/dress',[V1\CharacterController::class,'attachDresses']);
-Route::delete('characters/{character}/dress',[V1\CharacterController::class,'detachDresses']);
+Route::post('characters/{character}/dress', [V1\CharacterController::class, 'attachDresses']);
+Route::delete('characters/{character}/dress', [V1\CharacterController::class, 'detachDresses']);
