@@ -16,5 +16,5 @@ jobs:
         run: ./vendor/bin/pint
       - name: "Push the changes to Git"
         run: git add .
-          git commit -m "Pint changes"
+          git commit -m"Pint changes"
           git push
