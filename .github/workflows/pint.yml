@@ -1,0 +1,12 @@
+name: Laravel Pint
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  laravel-pint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run laravel pint"
+        run: ./vendor/bin/pint
