@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Character\AttachDressRequest;
 use App\Http\Requests\Character\DetachDressRequest;
 use App\Models\Character;
+use App\Models\CharacterDress;
 use App\Services\CharacterService;
 use App\Traits\ApiResponser;
 
