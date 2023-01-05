@@ -15,7 +15,7 @@ jobs:
       - name: "Run laravel pint"
         run: ./vendor/bin/pint
       - name: "Push the changes to Git"
-        uses: binal-7span/character-dress
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply Laravel Pint changes
         env:
