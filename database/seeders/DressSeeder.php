@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 
 class DressSeeder extends Seeder
 {
@@ -18,23 +18,23 @@ class DressSeeder extends Seeder
         DB::table('dresses')->insert([
             [
                 'name' => 'Dress 1',
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ],
             [
                 'name' => 'Dress 2',
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ],
             [
                 'name' => 'Dress 3',
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ],
             [
                 'name' => 'Dress 4',
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ],
             [
                 'name' => 'Dress 5',
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ],
         ]);
     }

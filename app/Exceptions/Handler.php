@@ -2,10 +2,9 @@
 
 namespace App\Exceptions;
 
+use Throwable;
 use App\Traits\ApiResponser;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -52,7 +51,6 @@ class Handler extends ExceptionHandler
         });
     }
 
-
     /**
      * Render an exception into an HTTP response.
      *
@@ -67,14 +65,16 @@ class Handler extends ExceptionHandler
         // Set common error message if any model not found in system.
         if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
             $modelName = last(explode('\\', $exception->getModel()));
-            $modelKey = strtolower(preg_replace('/([a-z])([A-Z])/s','$1_$2', $modelName));
-            $modelName = preg_replace('/([a-z])([A-Z])/s','$1 $2', $modelName);
+            $modelKey = strtolower(preg_replace('/([a-z])([A-Z])/s', '$1_$2', $modelName));
+            $modelName = preg_replace('/([a-z])([A-Z])/s', '$1 $2', $modelName);
             $modelName = strtolower($modelName);
             $modelName = ucfirst($modelName);
             // $exception->getModel();
             $error['errors'][$modelKey][] = __('entity.entityNotFound', ['entity' => "$modelName data"]);
-            return $this->error($error,404);
+
+            return $this->error($error, 404);
         }
+
         return parent::render($request, $exception);
     }
 }
